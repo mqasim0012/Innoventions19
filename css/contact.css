@@ -1,0 +1,299 @@
+/* Setup */
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500&display=swap');
+
+@font-face {
+    font-family: JosefinSans;
+    src: url(Fonts/JosefinSans-Regular.ttf);
+}
+
+:root {
+    --background: #151c25;
+    --offWhite: #edf0f1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Raleway";
+    background: url(../Images/14.jpg);
+    background-position: bottom;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+button {
+	padding: 0;
+	border: none;
+	font: inherit;
+	color: inherit;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+/* preloader */
+
+#overlay {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    top: 0;
+    background: rgb(22, 22, 22);
+}
+
+.goback {
+    position: fixed;
+    z-index: 888;
+    bottom: 0;
+    right: 0;
+    margin: 0 10px 10px 0;
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.7);
+    width: 30px;
+    background: rgb(39, 79, 151);
+    padding: 5px;
+    transform: scale(0);
+    cursor: pointer;
+    transition: all 500ms ease;
+}
+
+.goback.in {
+    transform: scale(1);
+}
+
+/* nav === the navigation bar itself, changes to mobile view at screen-width: 900px */
+
+.nav {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+    position: fixed;
+    z-index: 20;
+    top: 0;
+    background: #0f1f47;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10%;
+    padding-bottom: 5px;
+    width: 100%;
+}
+
+.nav__logo {
+    cursor: pointer;
+}
+
+.nav img {
+    max-width: 60px;
+}
+
+.nav__menuBurger {
+    display: none;
+}
+
+.nav__links {
+    list-style: none;
+}
+
+.nav__links li {
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.nav__links a {
+    transition: all 300ms ease 0s;
+    cursor: pointer;
+    text-decoration: none;
+    color: #edf0f1;
+}
+
+.nav__links li:hover a {
+    color: teal !important;
+}
+
+.nav__button button {
+    padding: 9px 25px;
+    color: rgba(0,136,169, 1);
+    border: 1px solid rgba(0,136,169, 1);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 300ms ease 0s;
+}
+
+.nav__button button:hover {
+    color: #edf0f1;
+    background-color: rgba(0, 136, 169, 0.8);
+    border-color: rgba(0,136,169, 0.8);
+}
+
+.content__form {
+    position: relative;
+    background: #fff;
+    font-family: "Raleway";
+    font-size: 1em;
+    text-align: center;
+    width: 50%;
+    min-height: 80vh;
+}
+
+.content__form h1 {
+    font-size: 2em;
+    width: 100%;
+    padding: 20px 0;
+    border-bottom: 1px solid #edf0f1;
+    padding-top: 5em;
+}
+
+input, textarea, .label-container {
+    margin: 2em 0;
+}
+
+.labels .container {
+    display: block;
+    position: relative;
+    margin-top: 2%;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.labels {
+    padding-top: 0;
+}
+
+.labels .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.labels .checkmark {
+    position: absolute;
+    left: 0%;
+    height: 25px;
+    width: 25px;
+    background-color: #fff;
+}
+
+.labels .container:hover input ~ .checkmark {
+    background-color: rgba(255, 255, 255, 0.473);
+}
+
+.labels .container input:checked ~ .checkmark {
+    background-color: rgb(32, 41, 122)
+}
+
+@media (max-width: 500px) {
+    .labels .checkmark {
+        left: 0%;
+    }
+}
+
+
+/* Cuz I didn't wanna start mobile view at 1150px */
+@media (max-width: 1150px) and (min-width: 900px) {
+    .nav__links #active {
+        display: none;
+    }
+}
+
+/* Switches to mobile view below 900px (Do not change this without making appropriate changes to the javascript connected to this width) */
+@media (max-width: 900px) {
+    .nav {
+        justify-content: flex-end;
+        align-items: center;
+        flex-flow: row wrap;
+        padding: 5px 10px;
+        width: 100%;
+    }
+
+    .nav__scienceSociety {
+        order: 0;
+        margin-right: auto;
+    }
+
+    .nav__logo {
+        order: 1;
+        margin: 0 auto;
+    }
+    
+    .nav__menuBurger {
+        display: block;
+        order: 2;
+        width: 60px;
+        margin: auto 0;
+        margin-left: auto;
+        cursor: pointer;
+        text-align: right;
+        line-break: after;
+    }
+
+    .nav__menuBurger img {
+        width: 30px;
+    }
+
+    nav {
+        border-top: 1px solid #edf0f1;
+        width: 100%;
+        text-align: center;
+        line-break: before;
+        order: 3;
+        display: none;
+    }
+    
+    .nav__links {
+        list-style: none;
+    }
+    
+    .nav__links li {
+        display: block;
+        margin: 0 auto;
+        padding: 20px 20px;
+    }
+    
+    .nav__links a {
+        transition: all 300ms ease 0s;
+        cursor: pointer;
+        text-decoration: none;
+        color: #edf0f1;
+    }
+    
+    .nav__links li:hover a {
+        color: #8088a9;
+    }
+
+    .nav__button {
+        order: 4;
+        width: 100%;
+        text-align: center;
+        display: none;
+        line-break: before;
+        height: 100vh;
+    }
+
+    .nav__button button {
+        padding: 9px 25px;
+        color: rgba(0,136,169, 1);
+        border: 1px solid rgba(0,136,169, 1);
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 300ms ease 0s;
+    }
+    
+    .nav__button button:hover {
+        color: #edf0f1;
+        background-color: rgba(0, 136, 169, 0.8);
+        border-color: rgba(0,136,169, 0.8);
+    }
+}

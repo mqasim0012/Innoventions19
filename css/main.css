@@ -1,0 +1,1050 @@
+/* Setup */
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500&display=swap');
+
+@font-face {
+    font-family: JosefinSans;
+    src: url(Fonts/JosefinSans-Regular.ttf);
+}
+
+:root {
+    --level-one: translateZ(3rem);
+    --level-two: translateZ(6rem);
+    --level-three: translateZ(9rem);
+    --background: #151c25;
+    --height-three: calc((99.8vw/3)*(763/1280));
+    --height-two: calc((99.8vw*(0.5))*(763/1280));
+    --height-one: calc((99.8vw)*(763/1280));
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Raleway";
+}
+
+button {
+	padding: 0;
+	border: none;
+	font: inherit;
+	color: inherit;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+/* preloader */
+
+#overlay {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    top: 0;
+    background: rgb(22, 22, 22);
+}
+
+/* wrap => container of the navigation bar and the intro screen */
+
+header {
+    width: 100%;
+    height: 100vh;
+}
+
+/* slider => container of the background photos, created as a seperate entity to maintain dynamic flow of the slides */
+
+slider {
+    display: block;
+    width: 100%;
+    min-height: calc(100% + 56px);
+    background-color: #1f1f1f;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+}
+
+slider > * {
+    position: absolute;
+    display: block;
+    width: 100%;
+    min-height: calc(100% + 56px);
+    background: #1f1f1f;
+    animation: slide 12s infinite;
+    overflow: hidden;
+}
+
+slide:nth-child(1){
+    left: 0%;
+    animation-delay: -1s;
+    z-index: 5;
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(../Images/5.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+slide:nth-child(2){
+    animation-delay: 2s;
+    z-index: 4;
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(../Images/14.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+slide:nth-child(3){
+    animation-delay: 5s;
+    z-index: 3;
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(../Images/15.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+slide:nth-child(4){
+    left: 0%;
+    animation-delay: 8s;
+    z-index: 2;
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(../Images/13.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+@keyframes slide {
+    0% { left: 100%; width: 100%; }
+    5% { left: 0%; }
+    25% { left: 0%; }
+    30% { left: -100%; width: 100%; }
+    30.0001% { left: -100%; width: 0%; }
+    100% { left: 100%; width: 0%; }
+}
+
+.goback {
+    position: fixed;
+    z-index: 888;
+    bottom: 0;
+    right: 0;
+    margin: 0 10px 10px 0;
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.7);
+    width: 30px;
+    background: rgb(39, 79, 151);
+    padding: 5px;
+    transform: scale(0);
+    cursor: pointer;
+    transition: all 500ms ease;
+}
+
+.goback.in {
+    transform: scale(1);
+}
+
+/* nav === the navigation bar itself, changes to mobile view at screen-width: 900px */
+
+.nav {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+    position: fixed;
+    z-index: 20;
+    top: 0;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10%;
+    padding-bottom: 5px;
+    width: 100%;
+}
+
+.nav__logo {
+    cursor: pointer;
+}
+
+.nav img {
+    max-width: 60px;
+}
+
+.nav__menuBurger {
+    display: none;
+}
+
+.nav__links {
+    list-style: none;
+}
+
+.nav__links li {
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.nav__links a {
+    transition: all 300ms ease 0s;
+    cursor: pointer;
+    text-decoration: none;
+    color: #edf0f1;
+}
+
+.nav__links li:hover a {
+    color: teal !important;
+}
+
+.nav__button button {
+    padding: 9px 25px;
+    color: rgba(0,136,169, 1);
+    border: 1px solid rgba(0,136,169, 1);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 300ms ease 0s;
+}
+
+.nav__button button:hover {
+    color: #edf0f1;
+    background-color: rgba(0, 136, 169, 0.8);
+    border-color: rgba(0,136,169, 0.8);
+}
+
+/* .main === the container of the intro object with the countdown, the dates and everything */
+.main {
+    position: fixed;
+    width: 100%;
+    top: 55%;
+    text-align: center;
+    transform: translateY(-50%);
+    color: #fff;
+    font-weight: 100;
+    transition: 500ms linear;
+    z-index: 6;
+    padding: 0 10%;
+}
+
+.main img {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.main p#innov {
+    font-size: 2rem;
+    margin-top: -20px;
+    text-shadow: rgba(0,0,0,1) 3px 3px 2px;
+}
+
+/* Arbitrary tweaks */
+#slight {
+    font-size: 1rem;
+}
+
+#larger {
+    font-size: 2rem;
+    color: #0c4bd3;
+    filter: brightness(500%);
+}
+
+/* Countdown */
+#countdown {
+    position: relative;
+    border-collapse: collapse;
+}
+
+#countdown p.time {
+    display: inline-block;
+    border: 1px solid transparent;
+    width: 50px;
+    height: 60px;
+    margin: 0;
+    position: relative;
+    text-shadow: rgba(0,0,0,0.3) 3px 5px 2px;
+}
+
+#countdown .bottom {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    left: 0;
+    bottom: 0px;
+}
+
+#countdown span.time {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    left: 0;
+    top: 50%;
+    transform: translateY(-100%);
+    font-size: 2em;
+    color: #0c4bd3;
+    filter: brightness(500%);
+}
+
+/* div.content == arbitrary content to make the website scrollable, until sent to ahmed */
+.content {
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    top: 100vh;
+    z-index: 10;
+    background: var(--background);
+    color: #fff;
+}
+
+/* \\\\\\\\\\\\\\\\\\\\\\\\\AHMADS CODE HERE\\\\\\\\\\\\\\\\\\\\\\\\\*/
+
+.clearfix::after {
+	content:"";
+	clear: both;
+    display: table;
+}
+
+/* QASIM */
+
+.aboutUs {
+    margin: 0 auto;
+    hyphens: auto;
+    opacity: 1;
+    transition: 500ms ease;
+}
+
+.aboutUs .paras {
+    width: 80%;
+    padding: 10px 0;
+    margin: 0 auto;
+}
+
+.aboutUs h1 {
+    position: sticky;
+    top: 30px;
+    padding-top: 50px;
+    z-index: 15;
+    background: var(--background);
+    box-shadow: 0px 28px 5px -21px rgba(0,0,0,0.75);
+    transition: all 500ms ease;
+}
+
+.aboutUs h1::after {
+    content: "";
+    display: block;
+    position: relative;
+    background: rgba(255, 255, 255, 0.3);
+    width: 10%;
+    height: 2px;
+    left: 45%;
+    right: 45%;
+    margin: 10px 0;
+    margin-bottom: 1em;
+}
+
+
+.aboutUs p {
+    width: 90%;
+    margin: 0 auto;
+}
+
+@media (min-width: 900px) {
+    .aboutUs {
+        padding: 0 10%;
+    }
+}
+
+/* Video: */
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    margin: 2em 0;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.c-video {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.c-buttons p {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0%;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #FFF;
+    font-size: 3em;
+    opacity: 1;
+    transition: all 500ms ease;
+}
+
+
+#teal, #smol {
+    color: teal;
+}
+
+.play {
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8));
+    transform: scale(1);
+}
+
+.pause {
+    background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0));
+    transform: scale(0);
+}
+
+#smol {
+    font-size: 80%;
+}
+
+/* Events: */
+
+.events {
+    margin-top: -35px;
+}
+
+.events h1 {
+    position: sticky;
+    top: 30px;
+    padding-top: 55px;
+    z-index: 15;
+    background: var(--background);
+    color: #fff;
+    box-shadow: 0px 28px 5px -21px rgba(0,0,0,0.75);
+    transition: all 500ms ease;
+}
+
+@media (max-width: 900px) {
+    .events h1 {
+        top: 30px;
+        padding-top: 45px;
+    }
+}
+
+.events h1::after {
+    content: "";
+    display: block;
+    position: relative;
+    background: rgba(139, 139, 139, 0.3);
+    width: 10%;
+    height: 2px;
+    left: 45%;
+    right: 45%;
+    margin: 0;
+    margin-top: 10px;
+}
+
+.events__flexbox {
+    padding: 0 0.1vw;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-items: center;
+}
+
+.card {
+    width: calc((1/3)*100%);
+    background: var(--background);
+    margin: 10px auto;
+    font-size: 1em;
+}
+
+@media (min-width: 650px) {
+    .card:nth-child(13) {
+        margin-right: 0;
+        margin-left: auto;
+    }
+
+    .card:nth-child(14) {
+        margin-left: 0;
+        margin-right: auto;
+    }
+}
+
+.card__content {
+    text-align: center;
+    position: relative;
+    padding: 9.915026042vw 0;
+    color: #fff;
+    transition: transform 2s ease;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-perspective:  900px;
+    -moz-perspective: 900px;
+    -ms-perspective: 900px;
+    perspective: 900px;
+}
+
+.card__front img {
+    width: 100%;
+    height: var(--height-three);
+}
+
+.card:hover .card__content {
+    transform: rotateY(-.5turn);
+}
+
+.card__front,
+.card__back {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    backface-visibility: hidden;
+    display: grid;
+    align-content: center;
+}
+
+.card__front {
+    object-fit: cover;
+    z-index: 13;
+    transform: translateZ(1px);
+}
+
+.card__back {
+    transform-style: preserve-3d;
+    transform: rotateY(.5turn);
+    color: #fff;
+    z-index: 11;
+}
+
+.card:nth-child(1) .card__back {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../events/DASSP.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.card:nth-child(2) .card__back {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../events/Mathalon.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.card:nth-child(3) .card__back {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../events/Novum.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.card:nth-child(4) .card__back {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../events/Panacea.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.card:nth-child(5) .card__back {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../events/Renaissance.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.card:nth-child(6) .card__back {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../events/Artiface.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.card:nth-child(7) .card__back {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../events/Kryptos.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.card:nth-child(8) .card__back {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../events/Project\ X.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.card:nth-child(9) .card__back {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../events/Enfilade.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.card:nth-child(10) .card__back {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../events/Fantasm.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.card:nth-child(11) .card__back {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../events/Crime\ Conundrum.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.card:nth-child(12) .card__back {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../events/Bit\ By\ Bit.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.card:nth-child(13) .card__back {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../events/Envirothon.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.card:nth-child(14) .card__back {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../events/The\ Final\ Problem.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.seemore {
+    color: turquoise;
+    transform-style: preserve-3d;
+    transform: var(--level-three);
+    cursor: pointer;
+    transition: 200ms ease;
+    text-decoration: turquoise;
+}
+
+.seemore:hover {
+    color: #0c4bd3;
+    filter: brightness(500%);
+    text-decoration: underline;
+}
+
+.card__back p {
+    transform: var(--level-one);
+}
+
+.card__back::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    top: 10%;
+    bottom: 10%;
+    left: 10%;
+    right: 10%;
+    border: 1px solid rgba(255,255,255,0.5);
+    transform: var(--level-two);
+}
+
+.directorate-wrapper {
+    margin-top: -30px;
+}
+
+.directorate-wrapper h1 {
+    position: sticky;
+    top: 30px;
+    padding-top: 50px;
+    z-index: 15;
+    background: var(--background);
+    box-shadow: 0px 28px 5px -21px rgba(0, 0, 0, 0.75);
+    transition: all 500ms ease;
+}
+
+.directorate-wrapper h1::after {
+    content: "";
+    display: block;
+    position: relative;
+    background: rgba(255, 255, 255, 0.3);
+    width: 10%;
+    height: 2px;
+    left: 45%;
+    right: 45%;
+    margin: 0;
+    margin-top: 10px;
+}
+
+.directorate {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0 10%;
+    background: var(--background);
+}
+
+.directorate .box {
+    max-width: 30%;
+    margin: 10px auto;
+    padding-bottom: 5px;
+    color: #fff;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.directorate img {
+    width: 90%;
+    border-radius: 100%;
+}
+
+.directorate h3::before {
+    content: "";
+    display: block;
+    position: relative;
+    width: 30%;
+    left: 35%;
+    right: 35%;
+    margin: 5px 0;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 600px) {
+    .directorate .box {
+        max-width: 45%;
+        margin: 10px auto;
+    }
+}
+
+@media (max-width: 400px) {
+    .directorate .box {
+        max-width: 80%;
+        margin: 10px auto;
+    }
+}
+
+.view {
+    width: 100px;
+    height: 100px;
+    background: transparent;
+    margin: 1em auto;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    background: #151c25;
+    transition: all 200ms ease-in;
+}
+
+.view.clicked {
+    transform: rotateZ(180deg);
+}
+
+.view__img {
+    width: 60px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.view:hover {
+    -webkit-box-shadow: 0px 0px 28px -3px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 0px 28px -3px rgba(0,0,0,1);
+    box-shadow: 0px 0px 28px -3px rgba(0,0,0,1);
+}
+
+.hbox {
+    display: flex;
+    flex-flow: row wrap;
+    /* clip-path: circle(0% at 50% 50%);
+    transition: all 500ms ease-in;
+    height: 0; */
+}
+
+.hElement {
+    clip-path: circle(0 at 0 0);
+    transition: all 350ms ease-in;
+}
+
+.hElement.in {
+    clip-path: circle(100% at 50% 50%);
+}
+
+.g-map {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 25px;
+}
+
+.g-map iframe {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+footer {
+    background: #0f1f47;
+    display: flex;
+    color: #fff;
+    position: relative;
+    padding: 5px 20px;
+    bottom: 0;
+    justify-content: space-between;
+    align-items: center;
+    justify-items: center;
+    flex-flow: column wrap;
+}
+
+
+footer #jt {
+    position: relative;
+    padding: 0;
+    color: #0c4bd3;
+    filter: brightness(500%);
+}
+
+footer #cell {
+    grid-area: cell;
+    color: #0c4bd3;
+    filter: brightness(500%);
+    cursor: pointer;
+}
+
+footer .social-buttons img {
+    margin: 20px 20px 10px 20px;
+    width: 30px;
+    height: 30px;
+}
+
+footer .social-buttons img {
+    cursor: pointer;
+    transition: 250ms;
+}
+
+footer .social-buttons img:hover {
+    filter: brightness(150%);
+}
+
+footer span {
+    font-size: 80%;
+}
+
+footer #authors {
+    padding-top: 10px;
+}
+
+/* Cuz I didn't wanna start mobile view at 1150px */
+@media (max-width: 1150px) and (min-width: 900px) {
+    .nav__links #active {
+        display: none;
+    }
+}
+
+/* Switches to mobile view below 900px (Do not change this without making appropriate changes to the javascript connected to this width) */
+@media (max-width: 900px) {
+    .nav {
+        justify-content: flex-end;
+        align-items: center;
+        flex-flow: row wrap;
+        padding: 5px 10px;
+        width: 100%;
+    }
+
+    .nav__scienceSociety {
+        order: 0;
+        margin-right: auto;
+    }
+
+    .nav__logo {
+        order: 1;
+        margin: 0 auto;
+        display: none;
+    }
+    
+    .nav__menuBurger {
+        display: block;
+        order: 2;
+        width: 60px;
+        margin: auto 0;
+        margin-left: auto;
+        cursor: pointer;
+        text-align: right;
+        line-break: after;
+    }
+
+    .nav__menuBurger img {
+        width: 30px;
+    }
+
+    nav {
+        border-top: 1px solid #edf0f1;
+        width: 100%;
+        text-align: center;
+        line-break: before;
+        order: 3;
+        display: none;
+    }
+    
+    .nav__links {
+        list-style: none;
+    }
+    
+    .nav__links li {
+        display: block;
+        margin: 0 auto;
+        padding: 20px 20px;
+    }
+    
+    .nav__links a {
+        transition: all 300ms ease 0s;
+        cursor: pointer;
+        text-decoration: none;
+        color: #edf0f1;
+    }
+    
+    .nav__links li:hover a {
+        color: #8088a9;
+    }
+
+    .nav__button {
+        order: 4;
+        width: 100%;
+        text-align: center;
+        display: none;
+        line-break: before;
+        height: 100vh;
+    }
+
+    .nav__button button {
+        padding: 9px 25px;
+        color: rgba(0,136,169, 1);
+        border: 1px solid rgba(0,136,169, 1);
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 300ms ease 0s;
+    }
+    
+    .nav__button button:hover {
+        color: #edf0f1;
+        background-color: rgba(0, 136, 169, 0.8);
+        border-color: rgba(0,136,169, 0.8);
+    }
+
+    .main {
+        padding: 0;
+    }
+    .main img {
+        max-width: 200px;
+    }
+
+    .main #innov {
+        margin-top: 0px;
+    }
+
+    .video-container {
+        margin: 2em 0%;
+    }
+
+    .directorate {
+        width: 100%;
+        padding: 0 0%;
+    }
+    
+    .card__content {
+        padding: 5em 0;
+    }
+}
+
+@media (max-width: 1050px) {
+    .card {
+        width: 50%;
+    }
+    
+    .card__content {
+        padding: 14.87253906vw 0;
+    }
+    .card__front img {
+        width: 100%;
+        height: var(--height-two);
+    }
+}
+
+@media (max-width: 650px) {
+    .card {
+        width: 100%;
+        margin: 5px auto;
+    }
+    
+    .card__content {
+        padding: 29.74507813vw 0;
+    }
+    
+    .card__front img {
+        width: 100%;
+        height: var(--height-one);
+    }
+
+    .c-buttons p {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 700px) {
+    .main img {
+        max-width: 150px;
+    }
+}
+
+/* Fixes view in landscape orientation on touchscreen devices (doesn't cater to heights lower than 300px, will add that later) */
+@media (hover: none) and (orientation: landscape) {
+
+    @media (max-height: 500px) {
+        @media (max-width: 600px) {
+            .main #innov {
+                font-size: 1.5rem;
+            }
+            
+            #slight {
+                font-size: 0.5rem;
+            }
+        }
+
+        .main img {
+            max-width: 100px;
+        }
+
+        .main #innov:before {
+            height: 0px;
+        }
+
+        .main {
+            grid-template-columns: 50% 50%;
+        }
+    }
+}
+
+@media (max-width: 250px) {
+    .main #innov {
+        font-size: 1.5rem;
+        hyphens: auto;
+    }
+    
+    #slight {
+        font-size: 0.75rem;
+    }   
+}

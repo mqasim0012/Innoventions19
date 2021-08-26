@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- No idea what these meta tags do -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <!-- This icon is basicaly invisible in the tab, try to find a replacement -->
+    <link rel = "shortcut icon" href = "Images/lgoo.ico" />
+    
+    <title>Innoventions'19</title>
+    
+    <!-- Preloader -->
+	<link href="css/royal_preloader.css" rel="stylesheet">
+
+    <!-- css (Include your own css files here) -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animate.css">
+
+    <!-- js -->
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script>new WOW().init();</script>
+    <script type="text/javascript" src="js/royal_preloader.min.js"></script>
+	<script type="text/javascript">
+		Royal_Preloader.config({
+		    mode:           'text',
+		    text: 'JT INNOVENTIONS 2019',
+		    background: ['#000000']
+		});
+	</script>
+    
+
+</head>
+
+<body>
+
+    <div id='top' style='width: 0; height: 0;'></div>
+    <img src="Images/top.png" alt="" class="goback">
+
+    <!-- Just to hide the initial jitter (preloader, a basic version of it) -->
+    <div id="overlay">
+    </div>
+
+    <!-- welcome screen -->
+    <header>
+        <!-- navigation bar -->
+        <div class='nav'>
+            <a class="nav__logo" href='index.html'><img src="Images/lgoo.png" alt="Innoventions Logo" ></a>
+
+            <!-- Mobile view burger -->
+            <div class="nav__menuBurger">
+                <img src="Images/menu.png" alt="menu-burger" />
+            </div>
+
+            <!-- Navigation links -->
+            <nav>
+                <ul class='nav__links'>
+                    <li id = 'active'><a href='#top' id='home'>Home</a></li>
+                    <li><a href="#section_events"  id='events'>Events</a></li>
+                    <li><a href="#team" id='ourTeam'>Our Team</a></li>
+                    <li><a href="#footer" id='contactUs'>Contact Us</a></li>
+                </ul>
+            </nav>
+            <a class="nav__button" href='registrations/registrations.php'><button>Register Now!</button></a>
+            <img class='nav__scienceSociety' src="Images/abdussalam.png" alt="">
+        </div>
+        <!-- Welome screen content -->
+        <div class="main">
+            <div id = 'countdown'>
+                <p id="days" class='time'>
+                    <span class = 'time'></span><br>
+                    <span class="bottom">days</span>
+                </p>
+                <p id="hours" class='time'>
+                    <span class = 'time'></span><br>
+                    <span class="bottom">hrs</span>
+                </p>
+            </div>
+            <!-- The bigger logo -->
+            <img src="Images/lgoo.png" alt="" class="wow zoomIn" data-wow-duration="3s">
+            <div class="details">
+                <p id='innov'>Innoventions'<span id="larger">19</span></p>
+                <p id="slight"><span id="larger">13</span>th to <span id='larger'>15</span>th September</p><br>
+            </div>
+        </div>
+    </header>
+
+    <!-- Background slides -->
+    <slider>
+        <slide></slide>
+        <slide></slide>
+        <slide></slide>
+        <slide></slide>
+    </slider>
+    <!-- Content holder (If you do need to place anything outside of this one, make sure you define that thing's background [Don't leave it] and give it the same z-index, and an appropriate top: XXX value with absolute positioning) -->
+
+    <div class="content">
+        <div class="aboutUs">
+            <h1>About Us</h1>
+            <div class="paras">
+                <p>
+                    Lahore Grammar School Senior Boys has, over the years, established itself as a beacon of quality education and has built up a reputation as one of the leading institutions of Pakistan. Alongside prized culture of extra and co-curricular activities, Lahore Grammar School inculcates within its students a sense of moral responsibility and social well-being. Our events have always been fervently awaited and have always been the talk of the town.
+                </p><br><br>
+                <p>
+                    LGS JT’s Science, Mathematics, Robotics, Arts and Information Technology societies are collaborating to host a national Olympiad titled “Innoventions’19” : Pakistan’s largest school-based Science Olympiad. After being highly successful in the previous years, amassing approximately 70 teams each time, this is the institution’s 7th time hosting this event. Each year, the competition receives an unprecedented response, setting a very high benchmark for the future events in this area of co-curricular activities, and making Innoventions’19 this year’s most eagerly awaited event in the Science activity calendar.
+                </p>
+            </div>
+        </div>
+
+        <div class="video-container">
+            <div class="c-video">
+                <video src = 'vid/teaserVid.mp4' class = 'video'></video>
+                <div class="c-buttons">
+                    <p id = 'play-pause' class='play'><span>Innoventions'<span id = 'smol'>19</span></span><span id='teal'>Click to play!</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div id="section_events" class="events">
+            <h1 class="wow zoomIn" data-wow-duration="1s">Events</h1>
+            <div class="events__flexbox">
+                <!-- DASSP -->
+                <div class="card">
+                    <div class="card__content">
+                        <div class="card__front">
+                            <img src="events/DASSP.jpg">
+                        </div>
+                        <div class="card__back">
+                            <p>Coming Soon!</p>
+                            <a class="seemore"><!--view details--></a>
+                            <input type="hidden" name="event" value='DASSP'>
+                        </div>
+                    </div>
+                </div>
+                <!-- Mathalon -->
+                <div class="card">
+                    <div class="card__content">
+                        <div class="card__front">
+                            <img src="events/Mathalon.jpg">
+                        </div>
+                        <div class="card__back">
+                            <p>Coming Soon!</p>
+                            <a class="seemore"><!--view details--></a>
+                            <input type="hidden" name="event" value='Mathalon'>
+                        </div>
+                    </div>
+                </div>
+                <!-- Novum -->
+                <div class="card">
+                    <div class="card__content">
+                        <div class="card__front">
+                            <img src="events/Novum.jpg">
+                        </div>
+                        <div class="card__back">
+                            <p>Coming Soon!</p>
+                            <a class="seemore"><!--view details--></a>
+                            <input type="hidden" name="event" value='Novum'>
+                        </div>
+                    </div>
+                </div>
+                <!-- Panacea -->
+                <div class="card">
+                    <div class="card__content">
+                        <div class="card__front">
+                            <img src="events/Panacea.jpg">
+                        </div>
+                        <div class="card__back">
+                            <p>Coming Soon!</p>
+                            <a class="seemore"><!--view details--></a>
+                            <input type="hidden" name="event" value='Panacea'>
+                        </div>
+                    </div>
+                </div>
+                <!-- Renaissance -->
+                <div class="card">
+                    <div class="card__content">
+                        <div class="card__front">
+                            <img src="events/Renaissance.jpg">
+                        </div>
+                        <div class="card__back">
+                            <p>Coming Soon!</p>
+                            <a class="seemore"><!--view details--></a>
+                            <input type="hidden" name="event" value='Renaissance'>
+                        </div>
+                    </div>
+                </div>
+                <!-- Artiface -->
+                <div class="card">
+                    <div class="card__content">
+                        <div class="card__front">
+                            <img src="events/Artiface.jpg">
+                        </div>
+                        <div class="card__back">
+                            <p>Coming Soon!</p>
+                            <a class="seemore"><!--view details--></a>
+                            <input type="hidden" name="event" value='Artiface'>
+                        </div>
+                    </div>
+                </div>
+                <!-- Kryptos -->
+                <div class="card">
+                    <div class="card__content">
+                        <div class="card__front">
+                            <img src="events/Kryptos.jpg">
+                        </div>
+                        <div class="card__back">
+                            <p>Coming Soon!</p>
+                            <a class="seemore"><!--view details--></a>
+                            <input type="hidden" name="event" value='Kryptos'>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project X -->
+                <div class="card">
+                    <div class="card__content">
+                        <div class="card__front">
+                            <img src="events/Project X.jpg">
+                        </div>
+                        <div class="card__back">
+                            <p>Coming Soon!</p>
+                            <a class="seemore"><!--view details--></a>
+                            <input type="hidden" name="event" value='Project X'>
+                        </div>
+                    </div>
+                </div>
+                <!-- Enfilade -->
+                <div class="card">
+                    <div class="card__content">
+                        <div class="card__front">
+                            <img src="events/Enfilade.jpg">
+                        </div>
+                        <div class="card__back">
+                            <p>Coming Soon!</p>
+                            <a class="seemore"><!--view details--></a>
+                            <input type="hidden" name="event" value='Enfilade'>
+                        </div>
+                    </div>
+                </div>
+                <!-- Fantasm -->
+                <div class="card">
+                    <div class="card__content">
+                        <div class="card__front">
+                            <img src="events/Fantasm.jpg">
+                        </div>
+                        <div class="card__back">
+                            <p>Coming Soon!</p>
+                            <a class="seemore"><!--view details--></a>
+                            <input type="hidden" name="event" value='Fantasm'>
+                        </div>
+                    </div>
+                </div>
+                <!-- Crime Conundrum -->
+                <div class="card">
+                    <div class="card__content">
+                        <div class="card__front">
+                            <img src="events/Crime%20Conundrum.jpg">
+                        </div>
+                        <div class="card__back">
+                            <p>Coming Soon!</p>
+                            <a class="seemore"><!--view details--></a>
+                            <input type="hidden" name="event" value='Crime Conundrum'>
+                        </div>
+                    </div>
+                </div>
+                <!-- Bit by Bit -->
+                <div class="card">
+                    <div class="card__content">
+                        <div class="card__front">
+                            <img src="events/Bit%20By%20Bit.jpg">
+                        </div>
+                        <div class="card__back">
+                            <p>Coming Soon!</p>
+                            <a class="seemore"><!--view details--></a>
+                            <input type="hidden" name="event" value='Bit By Bit'>
+                        </div>
+                    </div>
+                </div>
+                <!-- Envirothon -->
+                <div class="card">
+                    <div class="card__content">
+                        <div class="card__front">
+                            <img src="events/Envirothon.jpg">
+                        </div>
+                        <div class="card__back">
+                            <p>Coming Soon!</p>
+                            <a class="seemore"><!--view details--></a>
+                            <input type="hidden" name="event" value='Envirothon'>
+                        </div>
+                    </div>
+                </div>
+                <!-- The Final Problem -->
+                <div class="card">
+                    <div class="card__content">
+                        <div class="card__front">
+                            <img src="events/The Final Problem.jpg">
+                        </div>
+                        <div class="card__back">
+                            <p>Coming Soon!</p>
+                            <a class="seemore"><!--view details--></a>
+                            <input type="hidden" name="event" value='The Final Problem'>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><br>
+        
+
+        <p id='team'></p>
+        <div class="directorate-wrapper">
+            <h1  class="wow zoomIn" data-wow-duration="1s">Directorate</h1>
+            <div class="directorate">
+                <div class="box">
+                    <!--<img src="Images/DIrectorate/innoventons 059.jpg">-->
+                    <h3>Coming Soon!</h3>
+                    <p>Coming Soon!</p>
+                </div>
+
+
+                <div class="box">
+                    <!--<img src="Images/DIrectorate/innoventons 060.jpg">-->
+                    <h3>Coming Soon!</h3>
+                    <p>Coming Soon!</p>
+                </div>
+
+                <div class="box">
+                    <!--<img src="Images/DIrectorate/innoventons 061.jpg"> -->
+                    <h3>Coming Soon!</h3>
+                    <p>Coming Soon!</p>
+                </div>
+
+                <div class="hbox">
+                    <div class="box hElement">
+                        <!--<img src="Images/DIrectorate/innoventons 059.jpg">-->
+                        <h3>Coming Soon!</h3>
+                        <p>Coming Soon!</p>
+                    </div>
+
+
+                    <div class="box hElement">
+                        <!--<img src="Images/DIrectorate/innoventons 060.jpg">-->
+                        <h3>Coming Soon!</h3>
+                        <p>Coming Soon!</p>
+                    </div>
+
+                    <div class="box hElement">
+                        <!--<img src="Images/DIrectorate/innoventons 061.jpg"> -->
+                        <h3>Coming Soon!</h3>
+                        <p>Coming Soon!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="view">
+                <img class='view__img' src="Images/down.png" alt="view more sign">
+            </div>
+        </div>
+
+        <!-- added g-map to make the map responsive -->
+        <div class="g-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3402.945452454178!2d74.28891521517599!3d31.470686656742576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391903e0fc887323%3A0xab96115d544c1796!2sLahore+Grammar+School+Senior+Boys+Campus+JT!5e0!3m2!1sen!2s!4v1562225528803!5m2!1sen!2s" frameborder="0" style="border:0;" allowfullscreen></iframe>
+        </div>
+
+        <div class="lul"></div>
+
+        <footer id='footer'>
+            <div class='social-buttons'>
+                <a href='https://www.facebook.com/InnoventionsOfficial/' target="_blank"><img src="Images/fb.png"></a>
+                <a href='https://www.instagram.com/innoventions19/' target="_blank"><img src="Images/insta.png"></a>
+                <a href='mailto:innoventions19@gmail.com' target="_blank"><img src="Images/gmail.png"></a>
+            </div>
+            <div id='cell'>+92 321 5462815 | innoventions19@gmail.com</div>
+            <p id='jt'>
+                JT INNOVENTIONS 2019 <span>| LGS JT Boys</span>
+            </p>
+            <div id='authors'>&copy; Muhammad Qasim & Ahmad Saleem Mirza</div>
+        </footer>
+    </div>
+    
+    <script src="js/video.js"></script>
+</body>
+</html>
