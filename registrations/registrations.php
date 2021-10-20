@@ -112,11 +112,11 @@ session_destroy();
                     <li>You will have to identify each team distinctively by selecting an arbitrary letter (e.g. team X), making sure you do not select the same letter twice.</li><br>
                     <li>Each entry, in this form, is <b>required</b> - unless otherwise specified.</li><br>
                     <li>It is <b>strongly</b> advised you recheck each entry before submitting the form.</li><br>
-                    <li>If you must change your registration info after you've submitted the form, contact us at raahimshah18@gmail.com or Obaidullah.1823@gmail.com.</li><br>
+                    <li>If you must change your registration info after you've submitted the form, contact us at fake1@mail.com or fake2@mail.com.</li><br>
                     <li>You must follow certain formats in this document (Although you will be informed if you make an error):
                         <ul id = 'formats'>
                             <li>Your institution's name may only contain letters, numbers, dashes, periods and/or spaces.</li><br>
-                            <li>Phone numbers may only contain numbers, dashes, spaces and "+", eg: +92 345 7796889 or 0345-7796889</li><br>
+                            <li>Phone numbers may only contain numbers, dashes, spaces and "+", eg: +92 XXX XXXXXXX or 0345-XXXXXXX</li><br>
                             <li>Emails are expected to strictly follow the standard format they generally have</li><br>
                             <li>Names may only contain lowercase/uppercase letters or spaces</li><br>
                             <li>If, however, your information really doesn't follow the specified formats, let us know by contacting us on <a>facebook</a> or one of the emails specified above</li>

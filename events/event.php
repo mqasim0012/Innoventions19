@@ -83,14 +83,14 @@ if (isset($_GET['event'])) {
             <h1 id='event__title'><?php echo $event; ?></h1>
             <div class="event__heads">
                 <div class="event__heads__details">
-                    <img src="../Images/DIrectorate/innoventons 060.jpg">
+                    <img src="../Images/DIrectorate/placeholder.jpg">
                     <ul class="event__heads__description">
                         <li>Event Head</li>
                         <li>Name Name</li>
                     </ul>
                 </div>
                 <div class="event__heads__details">
-                    <img src="../Images/DIrectorate/innoventons 061.jpg" alt="">
+                    <img src="../Images/DIrectorate/placeholder.jpg" alt="">
                     <ul class="event__heads__description">
                         <li>Event Head</li>
                         <li>Name Name</li>

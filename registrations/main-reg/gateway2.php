@@ -213,7 +213,7 @@ if (isset($_SESSION['institutionName']) && isset($_SESSION['institutionContact']
                         }
 
                         // Posting variables back into the counter
-                        $sqlUpdate = "UPDATE eventsCount
+                        $sqlUpdate = "UPDATE eventscount
                                         SET 
                                         institutionCount=$institutionCount, 
                                         teamCount=$teamCount, 
