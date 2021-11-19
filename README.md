@@ -1,7 +1,7 @@
 Innoventions19 Web Application
 
 Creator: Muhammad Qasim
-Date of Development: May 2019 - August 2019
+Date of Development: May 2019 - October 2019
 
 The working full-stack app is live at https://innoventions.herokuapp.com/
 
