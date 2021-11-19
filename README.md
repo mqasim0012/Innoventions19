@@ -20,8 +20,6 @@ The working full-stack app is live at https://innoventions.herokuapp.com/
   - To see frontend UI only: Simply open the index.html file with all other repositories present in the same folder.
   - To see the full application, launch app on an Apache server with PHP enabled.
   - Moreover, please make a MySQL database to accomodate database queries in registration process 
-    (refer to registrations/main-reg/db.php for details)
-
-Thanks!
-
-
+    - Innoventions.sql contains the database info.
+    - db.php contains db credentials, which you might have to edit.
+  - Let me know if you need anything clarified regarding the process!
